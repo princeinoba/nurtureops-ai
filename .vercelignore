@@ -1,0 +1,25 @@
+# Clean-room evidence and local provider state never leave the workspace.
+.evidence/
+.tmp/
+.supabase/
+supabase/.branches/
+supabase/.temp/
+
+# Local dependencies, build output, and test reports.
+node_modules/
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
+*.tsbuildinfo
+
+# Local environment and Vercel link state.
+.env
+.env.local
+.env.*.local
+.vercel/
+
+# Repository-only automation and CI metadata.
+.git/
+.github/
