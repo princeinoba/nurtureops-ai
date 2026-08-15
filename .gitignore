@@ -1,0 +1,24 @@
+# Dependencies and framework output
+node_modules/
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
+
+# Local environment and provider state
+.env
+.env.local
+.env.*.local
+!.env.example
+.vercel/
+.supabase/
+
+# Immutable local source evidence (hashes and inventories are committed in docs/)
+.evidence/
+.tmp/
+
+# OS and editor files
+.DS_Store
+Thumbs.db
+*.tsbuildinfo

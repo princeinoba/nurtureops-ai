@@ -1,0 +1,16 @@
+# Licence and provenance register
+
+| Capability or material                                                      | Source evidence                                  | Classification         | Decision                                                                                               |
+| --------------------------------------------------------------------------- | ------------------------------------------------ | ---------------------- | ------------------------------------------------------------------------------------------------------ |
+| Next.js, React, Supabase clients, Zod, Lucide, PDF-Lib, Vitest, Playwright  | Published registries and upstream documentation  | PUBLISHED_DEPENDENCY   | Pin released packages in `package.json`; preserve their upstream licences through the package manager. |
+| AI SDK agent/tool primitives                                                | Vercel AI SDK archive and published `ai` package | PUBLISHED_DEPENDENCY   | Use released `ai@7.0.66`; do not copy monorepo source.                                                 |
+| Human-approved proposal boundary                                            | AI SDK approval API plus owner prompt            | CLEAN_ROOM_REWRITE     | New typed tools, schemas, field manifest, and approval contract.                                       |
+| Childcare feature vocabulary                                                | Folk Care and supplied audit                     | CONCEPTUAL_TRANSLATION | New information architecture and data model; no source, styles, text, or assets copied.                |
+| Billing concepts                                                            | NannyBill and supplied audit                     | CONCEPTUAL_TRANSLATION | New bigint engine and PostgreSQL schema; browser database/auth/bank patterns rejected.                 |
+| Folk Care code/assets                                                       | AGPL-3.0 manifest; README says MIT               | REJECTED               | Conflicting evidence and clean-room requirement prohibit copying.                                      |
+| NannyBill code/assets                                                       | No licence file/package licence; README says MIT | REJECTED               | Ownership/licence ambiguity prohibits copying.                                                         |
+| Archive Git metadata, dependency trees, build output                        | All archives                                     | REJECTED               | Evidence only; never committed or shipped.                                                             |
+| Jurisdiction rules, compliance certification, payments, messaging providers | No approved jurisdiction/provider                | BLOCKED                | Require separate owner, legal, privacy, safeguarding, and provider approval.                           |
+| Remote AI with real child/family data                                       | No approved provider/data assessment             | BLOCKED                | AI remains disabled or synthetic-only.                                                                 |
+
+All product code, CSS, SVG branding, schema, tests, and documentation in this branch were authored for this rebuild. No direct archive source reuse occurred.
