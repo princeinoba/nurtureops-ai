@@ -1,0 +1,10 @@
+.next
+.evidence
+.tmp
+docs/source-evidence
+node_modules
+coverage
+playwright-report
+test-results
+pnpm-lock.yaml
+supabase/.temp

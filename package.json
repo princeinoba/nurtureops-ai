@@ -1,0 +1,57 @@
+{
+  "name": "nurtureops-ai",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Synthetic-data childcare operations portfolio demonstration with human-reviewed AI boundaries.",
+  "license": "UNLICENSED",
+  "packageManager": "pnpm@11.19.0",
+  "engines": {
+    "node": ">=24 <25",
+    "pnpm": ">=11 <12"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint . --max-warnings 0",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:rls": "vitest run tests/rls",
+    "test:e2e": "playwright test",
+    "test:a11y": "playwright test --grep @a11y",
+    "test:pwa": "vitest run tests/pwa",
+    "security:scan": "node scripts/security-scan.mjs",
+    "verify": "pnpm format:check && pnpm lint && pnpm typecheck && pnpm test && pnpm test:integration && pnpm test:rls && pnpm test:pwa && pnpm security:scan && pnpm build"
+  },
+  "dependencies": {
+    "@supabase/ssr": "0.12.4",
+    "@supabase/supabase-js": "2.112.3",
+    "ai": "7.0.66",
+    "lucide-react": "1.31.0",
+    "next": "16.3.1",
+    "pdf-lib": "1.17.1",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@playwright/test": "1.62.1",
+    "@testing-library/jest-dom": "7.0.1",
+    "@testing-library/react": "16.3.2",
+    "@types/node": "26.2.0",
+    "@types/react": "19.2.18",
+    "@types/react-dom": "19.2.4",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.1",
+    "jsdom": "30.0.1",
+    "prettier": "3.9.6",
+    "supabase": "2.114.0",
+    "typescript": "6.0.3",
+    "vitest": "4.1.10"
+  }
+}
