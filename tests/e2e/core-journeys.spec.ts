@@ -26,6 +26,42 @@ test("attendance returns an honest non-persisting receipt", async ({ page }) => 
   ).toBeVisible();
 });
 
+test("offline attendance queue replays after reconnect", async ({ context, page }) => {
+  await page.goto("/attendance", { waitUntil: "networkidle" });
+  await context.setOffline(true);
+  try {
+    await page.getByRole("button", { name: /Check out Maya Chen/ }).click();
+    await expect(
+      page.getByText(/queued locally with a synthetic child identifier only/),
+    ).toBeVisible();
+    await expect
+      .poll(() =>
+        page.evaluate(
+          () =>
+            JSON.parse(localStorage.getItem("nurtureops-demo-attendance-queue-v1") ?? "[]").length,
+        ),
+      )
+      .toBe(1);
+
+    await context.setOffline(false);
+    await expect(
+      page.getByText(
+        "Queued synthetic attendance events were revalidated after reconnect. No operational record was changed.",
+      ),
+    ).toBeVisible();
+    await expect
+      .poll(() =>
+        page.evaluate(
+          () =>
+            JSON.parse(localStorage.getItem("nurtureops-demo-attendance-queue-v1") ?? "[]").length,
+        ),
+      )
+      .toBe(0);
+  } finally {
+    await context.setOffline(false);
+  }
+});
+
 test("care events remain private drafts", async ({ page }) => {
   await page.goto("/care-log", { waitUntil: "networkidle" });
   await page.getByLabel("Neutral structured detail").pressSequentially("Synthetic garden activity");

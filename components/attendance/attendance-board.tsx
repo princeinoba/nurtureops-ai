@@ -1,7 +1,7 @@
 "use client";
 
 import { Check, CloudOff, LoaderCircle, LogIn, LogOut } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { StatusPill } from "@/components/ui/primitives";
 import {
@@ -14,10 +14,62 @@ import type { DemoChild } from "@/lib/demo/data";
 
 type SyncState = "idle" | "queued" | "syncing" | "receipt" | "failed";
 
+async function validateQueuedAttendanceEvent(event: QueuedAttendanceEvent): Promise<void> {
+  const response = await fetch("/api/attendance/events", {
+    method: "POST",
+    headers: { "content-type": "application/json" },
+    body: JSON.stringify(event),
+  });
+  if (!response.ok) throw new Error("Synthetic validation failed.");
+}
+
 export function AttendanceBoard({ records }: { records: readonly DemoChild[] }) {
   const [queue, setQueue] = useState<QueuedAttendanceEvent[]>(readAttendanceQueue);
   const [syncState, setSyncState] = useState<SyncState>("idle");
   const [announcement, setAnnouncement] = useState("Attendance demo ready.");
+
+  useEffect(() => {
+    let cancelled = false;
+
+    async function replayQueue(): Promise<void> {
+      const pending = readAttendanceQueue();
+      if (pending.length === 0) return;
+
+      setSyncState("syncing");
+      setAnnouncement("Revalidating queued synthetic attendance events after reconnect.");
+      try {
+        for (const event of pending) {
+          await validateQueuedAttendanceEvent(event);
+          removeQueuedAttendanceEvent(event.idempotencyKey);
+        }
+        if (cancelled) return;
+        setQueue(readAttendanceQueue());
+        setSyncState("receipt");
+        setAnnouncement(
+          "Queued synthetic attendance events were revalidated after reconnect. No operational record was changed.",
+        );
+      } catch {
+        if (cancelled) return;
+        setQueue(readAttendanceQueue());
+        setSyncState("failed");
+        setAnnouncement(
+          "Reconnect replay failed safely. The bounded events remain queued for retry.",
+        );
+      }
+    }
+
+    function handleOnline(): void {
+      void replayQueue();
+    }
+
+    window.addEventListener("online", handleOnline);
+    if (navigator.onLine && readAttendanceQueue().length > 0) void replayQueue();
+
+    return () => {
+      cancelled = true;
+      window.removeEventListener("online", handleOnline);
+    };
+  }, []);
 
   async function queueEvent(child: DemoChild): Promise<void> {
     const type = child.status === "present" ? "check_out" : "check_in";
@@ -37,12 +89,7 @@ export function AttendanceBoard({ records }: { records: readonly DemoChild[] }) 
     if (!navigator.onLine) return;
     setSyncState("syncing");
     try {
-      const response = await fetch("/api/attendance/events", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(event),
-      });
-      if (!response.ok) throw new Error("Synthetic validation failed.");
+      await validateQueuedAttendanceEvent(event);
       removeQueuedAttendanceEvent(event.idempotencyKey);
       setQueue(readAttendanceQueue());
       setSyncState("receipt");
