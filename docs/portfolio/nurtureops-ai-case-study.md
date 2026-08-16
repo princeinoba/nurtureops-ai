@@ -33,8 +33,10 @@ Full repositories/transactions for every workflow, provider workers/webhooks, ge
 
 ## Blocked real-world activation
 
-Real data, jurisdictional policy, public signup/indexing, compliance claims, live payments/messages, and remote AI require owner decisions plus legal/privacy/safeguarding/provider review. Supabase region/organization and Vercel team are also owner-bound.
+Real data, jurisdictional policy, public signup/indexing, compliance claims, live payments/messages, and remote AI remain blocked pending legal/privacy/safeguarding/provider review. The approved public release remains a noindex, synthetic-data-only portfolio demonstration.
 
 ## Verification evidence
 
-The repository records exact source hashes, frozen dependencies, strict compiler/lint/build gates, deterministic test counts, twice-clean local migrations plus a hardened reset, database lint, and live guardian/staff/director/cross-tenant probes. Remote deployment evidence must be tied to a future exact commit and is not claimed here.
+The repository records exact source hashes, frozen dependencies, strict compiler/lint/build gates, deterministic test counts, twice-clean local migrations plus a hardened reset, database lint, and live guardian/staff/director/cross-tenant probes. The Free Supabase project in `ca-central-1` has 62/62 public tables under forced RLS, and the exact feature-SHA Vercel Preview passed route, browser, accessibility, responsive, and screenshot review. Exact Production deployment evidence is recorded on the release pull request rather than asserted before the deployment exists.
+
+Portfolio URL: <https://nurtureops-ai.vercel.app> (public only after the documented exact-main Production gates pass).

@@ -16,16 +16,14 @@
 - Dedicated billing-manager/auditor shells.
 - Automated performance budgets and production observability dashboards.
 - Remote type generation, backup/PITR exercise, and provider signature tests.
-- Exact-commit Preview/Production screenshots and deployment evidence.
+- Remote backup/restore evidence; destructive reset remains prohibited.
 
 ## Blocked pending owner or qualified review
 
-- Supabase organization and region selection.
-- Vercel team/project selection.
 - Jurisdiction, retention, ratio, tax, invoice, privacy, safeguarding, and consent rules.
 - Real child/family data.
 - Public signup or public indexing.
 - Live payment, messaging, storage-processing, analytics, or AI providers.
 - Any compliance certification or medical/legal/safeguarding conclusion.
 
-The local architecture and tests reduce risk but do not establish production readiness, regulatory compliance, or real-world operational safety.
+The architecture, exact-SHA CI, Free Supabase project, protected Preview, and synthetic Production verification reduce release risk but do not establish regulatory compliance or real-world operational safety. Final Production deployment and screenshot identifiers are recorded externally on the merged release pull request so they do not alter the deployed source SHA.

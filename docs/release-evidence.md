@@ -1,6 +1,6 @@
 # Release evidence
 
-Local release-candidate verification completed on 2026-08-15 on branch `codex/nurtureops-ai-clean-room-rebuild`. These measurements describe one local Windows workstation and are not production SLAs.
+Release-candidate verification began on 2026-08-15 on branch `codex/nurtureops-ai-clean-room-rebuild` and continued after its normal merge into `main`. These measurements describe one repository and its synthetic portfolio environments; they are not production SLAs or real childcare-operation claims.
 
 ## Integrity and dependency evidence
 
@@ -9,7 +9,7 @@ Local release-candidate verification completed on 2026-08-15 on branch `codex/nu
 - `pnpm install --frozen-lockfile`: passed.
 - `pnpm audit --audit-level high`: no known vulnerabilities.
 - Audited native package exception: `unrs-resolver@1.12.2`, declared in `pnpm-workspace.yaml`.
-- Repository security scan: passed across 145 tracked and candidate files.
+- Repository security scan: passed across 148 tracked and candidate files.
 
 ## Application verification
 
@@ -36,7 +36,9 @@ Local release-candidate verification completed on 2026-08-15 on branch `codex/nu
 - `supabase db lint --local --level warning`: no schema errors.
 - Live PostgreSQL RLS probe: passed for anonymous denial, guardian relationship access, staff location scope, owner cross-tenant denial, restricted incidents, issued-invoice immutability, and audit immutability.
 - All 62 public tables are covered by forced RLS and explicit grants.
-- No remote project was created because organization and region selection require owner approval.
+- Free remote Supabase project `qawvosbqbomlqitgqhfj` is ACTIVE_HEALTHY in `ca-central-1`.
+- Remote migrations are limited to the initial NurtureOps schema and synthetic demo seed.
+- Remote verification found 62/62 public tables with RLS enabled and forced, zero non-synthetic Auth identities, zero non-demo organizations, and zero non-demo payment providers.
 
 ## Local production measurements
 
@@ -68,9 +70,17 @@ Thirty warm production-mode local samples per synthetic endpoint:
 
 The production response includes CSP, Referrer-Policy, nosniff, frame denial, Permissions-Policy, COOP, and CORP headers. `upgrade-insecure-requests` is production-only so HTTP local development also works in WebKit.
 
+## Remote release evidence
+
+- Canonical repository: `princeinoba/nurtureops-ai`.
+- Feature SHA `50503c24b669f6ea29665e667935813997efd82f` passed `quality-gates` run `31906804915`.
+- PR #1 merged normally; merged-main SHA `d25da252b20a60dccbc8521d7be96e713116dcaa` passed `quality-gates` run `31916791811`.
+- Existing protected Preview `dpl_FCZBXHMEmkgmBcbJiQKkwWmBHnmq` remains the retained pre-Production rollback artifact.
+- Vercel project `prj_lG1v7j4nABaMQ4yHjivZdMScJaRS` remains on the Hobby plan with the canonical GitHub repository and `main` Production branch.
+- Approved stable Production URL: <https://nurtureops-ai.vercel.app>.
+
 ## Evidence holds
 
-- Exact-SHA Preview and Production URLs are pending Vercel team/project selection.
-- Remote Supabase migration, generated remote types, and backup/restore evidence are pending Supabase organization and region selection.
-- Exact deployed screenshots remain pending; local screenshots are intentionally not represented as deployment evidence.
+- Final Production deployment ID, exact release SHA, public route results, runtime log scan, and nine screenshot hashes must be recorded on the merged release pull request after those checks actually pass.
+- A remote backup/restore exercise remains deferred; no destructive Supabase reset is authorized.
 - Performance budgets are baseline observations, not guarantees.
