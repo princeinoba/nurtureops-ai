@@ -27,4 +27,3 @@
 - Any compliance certification or medical/legal/safeguarding conclusion.
 
 The architecture, exact-SHA CI, Free Supabase project, protected Preview, and synthetic Production verification reduce release risk but do not establish regulatory compliance or real-world operational safety. Final Production deployment and screenshot identifiers are recorded externally on the merged release pull request so they do not alter the deployed source SHA.
-

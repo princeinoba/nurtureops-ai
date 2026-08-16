@@ -7,4 +7,3 @@ The project includes role-specific director, educator, and guardian experiences;
 All records are fictional. No live payment or messaging provider is connected, AI is disabled or synthetic-only, and the project makes no compliance, client, usage, or business-outcome claims.
 
 Portfolio demonstration: <https://nurtureops-ai.vercel.app>. The public release remains noindex and synthetic-data-only.
-

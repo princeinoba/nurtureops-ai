@@ -84,4 +84,3 @@ The production response includes CSP, Referrer-Policy, nosniff, frame denial, Pe
 - Final Production deployment ID, exact release SHA, public route results, runtime log scan, and nine screenshot hashes must be recorded on the merged release pull request after those checks actually pass.
 - A remote backup/restore exercise remains deferred; no destructive Supabase reset is authorized.
 - Performance budgets are baseline observations, not guarantees.
-

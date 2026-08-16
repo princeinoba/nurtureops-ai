@@ -17,16 +17,16 @@ A synthetic-data childcare operations portfolio demonstration built around deter
 
 ## Status
 
-| Area                                                   | State                                                          |
-| ------------------------------------------------------ | -------------------------------------------------------------- |
-| Local application and production build                 | Implemented and gated                                          |
-| Local Supabase migration/seed                          | Executed repeatedly on PostgreSQL 17                           |
-| Live local guardian/staff/director/cross-tenant probes | Passing                                                        |
-| Remote Supabase                                        | Free project verified in `ca-central-1`; 62/62 tables use forced RLS |
-| Vercel Preview                                         | Exact feature-SHA deployment verified READY and protected      |
+| Area                                                   | State                                                                        |
+| ------------------------------------------------------ | ---------------------------------------------------------------------------- |
+| Local application and production build                 | Implemented and gated                                                        |
+| Local Supabase migration/seed                          | Executed repeatedly on PostgreSQL 17                                         |
+| Live local guardian/staff/director/cross-tenant probes | Passing                                                                      |
+| Remote Supabase                                        | Free project verified in `ca-central-1`; 62/62 tables use forced RLS         |
+| Vercel Preview                                         | Exact feature-SHA deployment verified READY and protected                    |
 | Vercel Production                                      | Authorized synthetic-only release target: <https://nurtureops-ai.vercel.app> |
-| Real providers or real data                            | Blocked                                                        |
-| AI                                                     | Synthetic deterministic demo; remote model disabled by default |
+| Real providers or real data                            | Blocked                                                                      |
+| AI                                                     | Synthetic deterministic demo; remote model disabled by default               |
 
 See [known limitations](docs/limitations.md) for the exact demo/deferred/blocked boundary.
 
@@ -95,4 +95,3 @@ The archive audit found no high-confidence real secret or personal dataset, and 
 ## Licence
 
 Application code is currently marked `UNLICENSED`. Published dependencies retain their upstream licences. Folk Care and NannyBill source/assets were deliberately not copied because their licence evidence was conflicting or ambiguous.
-

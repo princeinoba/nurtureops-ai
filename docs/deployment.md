@@ -62,4 +62,3 @@ Approved zero-cost target:
 - Vercel Authentication: Preview-only so the retained Preview stays protected while the synthetic Production domain is public.
 
 Do not add a service-role key, provider credential, paid domain, paid integration, public signup, live payment/message worker, or remote AI key.
-

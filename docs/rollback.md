@@ -34,4 +34,3 @@ Record the accepted Production deployment ID, stable alias, exact SHA, and alias
 ## Evidence
 
 Record incident time, trigger, affected SHA/migration/deployment, commands, test results, decision maker, recovery SHA, data-integrity check, and residual follow-up. Do not include child/family narratives or secret values.
-

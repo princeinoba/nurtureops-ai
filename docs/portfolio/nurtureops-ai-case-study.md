@@ -40,4 +40,3 @@ Real data, jurisdictional policy, public signup/indexing, compliance claims, liv
 The repository records exact source hashes, frozen dependencies, strict compiler/lint/build gates, deterministic test counts, twice-clean local migrations plus a hardened reset, database lint, and live guardian/staff/director/cross-tenant probes. The Free Supabase project in `ca-central-1` has 62/62 public tables under forced RLS, and the exact feature-SHA Vercel Preview passed route, browser, accessibility, responsive, and screenshot review. Exact Production deployment evidence is recorded on the release pull request rather than asserted before the deployment exists.
 
 Portfolio URL: <https://nurtureops-ai.vercel.app> (public only after the documented exact-main Production gates pass).
-

@@ -8,4 +8,3 @@
 - Established unit, integration, RLS, PWA, security, browser/accessibility, CI, deployment, rollback, threat-model, and incident-response evidence without claiming clients, revenue, compliance, or production usage.
 
 Portfolio demonstration: <https://nurtureops-ai.vercel.app> (synthetic data only; noindex; no live payments, messaging, or remote AI).
-
