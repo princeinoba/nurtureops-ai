@@ -50,3 +50,16 @@ Use exactly one project named `nurtureops-ai`, Next.js framework, Free plan, onl
 Production is a synthetic-data portfolio demonstration only. It remains blocked if any real child/family data, public signup, live payment/message provider, unsupported compliance claim, real-data AI processing, exposed/missing secret, or failed gate exists.
 
 After a normal merge, verify the production source SHA equals merged `main`; deploy; repeat critical checks; verify noindex, intended `vercel.app` alias only, zero bypass credentials, and a recorded previous deployment.
+
+Approved zero-cost target:
+
+- Vercel team: `princeinobas-projects` (Hobby).
+- Existing project: `nurtureops-ai` / `prj_lG1v7j4nABaMQ4yHjivZdMScJaRS`.
+- Canonical Git repository: `princeinoba/nurtureops-ai`; Production branch: `main`.
+- Stable free domain: <https://nurtureops-ai.vercel.app>.
+- Runtime: Node.js 24.x; framework/build/output: repository-defined Next.js defaults.
+- Production variables: Supabase public URL/publishable key, `NURTUREOPS_DEMO_MODE=true`, `AI_ENABLED=false`, and `APP_URL=https://nurtureops-ai.vercel.app`.
+- Vercel Authentication: Preview-only so the retained Preview stays protected while the synthetic Production domain is public.
+
+Do not add a service-role key, provider credential, paid domain, paid integration, public signup, live payment/message worker, or remote AI key.
+
